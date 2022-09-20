@@ -1,0 +1,165 @@
+body {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+  font-size: 24px;
+  margin: 0;
+  padding: 0 20px;
+  background-image: url(/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  user-select: none;
+  /* backdrop-filter: blur(10px); */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(256, 256, 256, 0.4);
+  z-index: -1;
+}
+
+.title,
+.description {
+  margin: 0;
+  text-align: center;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  margin: 1em 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  counter-reset: item;
+}
+
+.list::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 1px;
+  height: calc(100% - 20px);
+  background-color: black;
+  opacity: 0.5;
+}
+
+.day {
+  width: 47%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.day::before {
+  content: counter(item)'.';
+  counter-increment: item;
+}
+
+label {
+  margin: 0 10px;
+}
+
+input {
+  width: 20%;
+  min-width: 70px;
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+input::placeholder {
+  color: blue;
+}
+
+.resultValue {
+  display: none;
+}
+
+.result {
+  min-width: 35%;
+}
+
+.result p {
+  margin: 0;
+}
+
+.buttons {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.addDay,
+.resultButton {
+  margin: 5px;
+  padding: 20px 30px;
+  min-width: 200px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.addDay {
+  background-color: blue;
+}
+
+.resultButton {
+  background-color: green;
+}
+
+.monthResult {
+  margin: 0;
+  padding: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1400px) {
+  .day {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .list::after {
+    display: none;
+  }
+  .day {
+    width: 100%;
+  }
+  .addDay,
+  .resultButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .monthResult {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+}

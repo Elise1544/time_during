@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div>
+      <h1 class="title">Привет!</h1>
+      <p class="description">Чтобы посчитать общее количество времени - введи время в формате "12:00" и нажми кнопку "Посчитать". Также ты можешь увидеть отдельно продолжительность каждого дня</p>
+      <ol action="" class="list">
+        <li class="day">
+          <label class="start">
+            Время прихода:
+            <input type="text" placeholder="00:00" />
+          </label>
+          <label class="end">
+            Время ухода:
+            <input type="text" placeholder="00:00" />
+          </label>
+          <input class="resultValue" type="text" />
+          <div class="result">
+            <p>Итого за день: <span></span></p>
+          </div>
+        </li>
+        <li class="day">
+          <label class="start">
+            Время прихода:
+            <input type="text" placeholder="00:00" />
+          </label>
+          <label class="end">
+            Время ухода:
+            <input type="text" placeholder="00:00" />
+          </label>
+          <input class="resultValue" type="text" />
+          <div class="result">
+            <p>Итого за день: <span></span></p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="buttons">
+        <button class="addDay">Добавить день</button>
+
+        <button class="resultButton">Посчитать</button>
+      </div>
+      <div>
+        <p class="monthResult">
+          Суммарно за месяц: <span class="resultDefault"></span>
+          <br />
+          Суммарно за месяц в часах: <span class="resultInHours"></span>
+        </p>
+      </div>
+    </div>
+    <script src="libs/luxon-min.js"></script>
+    <script src="libs/humanize-duration/humanize-duration.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
