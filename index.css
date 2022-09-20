@@ -74,8 +74,7 @@ label {
 
 input {
   width: 20%;
-  /* min-width: 70px; */
-  min-width: 115px;
+  min-width: 70px;
   font-size: inherit;
   background-color: transparent;
   border: none;
